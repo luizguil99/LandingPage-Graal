@@ -29,7 +29,7 @@ const Header = () => {
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
-                <span className="text-sm">(11) 3456-7890</span>
+                <span className="text-sm">(98) 984074070</span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="h-4 w-4" />
@@ -38,7 +38,7 @@ const Header = () => {
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="h-4 w-4" />
-              <span className="text-sm">Av. Paulista, 1000 - São Paulo, SP</span>
+              <span className="text-sm">Rua Inácio Xavier de Carvalho, 988 - São Francisco, São Luís-Maranhão</span>
             </div>
           </div>
         </div>
@@ -120,7 +120,7 @@ const Header = () => {
                     <Phone className="h-5 w-5 text-primary" />
                     <div>
                       <p className="text-sm font-medium text-gray-900">Telefone</p>
-                      <p className="text-sm text-gray-500">(11) 3456-7890</p>
+                      <p className="text-sm text-gray-500">(98) 984074070</p>
                     </div>
                   </div>
                   
@@ -136,7 +136,7 @@ const Header = () => {
                     <MapPin className="h-5 w-5 text-primary" />
                     <div>
                       <p className="text-sm font-medium text-gray-900">Endereço</p>
-                      <p className="text-sm text-gray-500">Av. Paulista, 1000 - São Paulo, SP</p>
+                      <p className="text-sm text-gray-500">Rua Inácio Xavier de Carvalho, 988 - São Francisco, São Luís-Maranhão</p>
                     </div>
                   </div>
                   

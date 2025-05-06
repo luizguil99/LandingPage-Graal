@@ -58,12 +58,19 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 font-medium flex items-center gap-2">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 font-medium flex items-center gap-2" onClick={() => window.open('https://contate.me/graalclinicav1', '_blank')}>
                 <CalendarDays className="h-5 w-5" />
                 Agendar Consulta
               </Button>
               
-              <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10 font-medium flex items-center gap-2">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-primary text-primary hover:bg-primary/10 font-medium flex items-center gap-2"
+                onClick={() => {
+                  document.getElementById('specialties').scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
                 Conheça Nossos Serviços
                 <ChevronRight className="h-4 w-4" />
               </Button>
@@ -111,7 +118,7 @@ const Hero = () => {
                 </div>
               </div>
               
-              <div className="relative h-[280px]">
+              <div className="relative h-[220px] md:h-[280px]">
                 {testimonials.map((testimonial, index) => (
                   <div 
                     key={testimonial.id}

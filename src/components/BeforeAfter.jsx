@@ -97,7 +97,7 @@ const BeforeAfter = () => {
                         <img 
                           src={caseItem.before} 
                           alt={`Antes - ${caseItem.title}`}
-                          className="w-full h-64 object-cover rounded-lg"
+                          className="w-full h-48 md:h-64 object-cover rounded-lg"
                         />
                         <div className="absolute top-3 left-3 bg-gray-900/70 text-white px-3 py-1 rounded-full text-sm font-medium">
                           Antes
@@ -109,7 +109,7 @@ const BeforeAfter = () => {
                         <img 
                           src={caseItem.after} 
                           alt={`Depois - ${caseItem.title}`}
-                          className="w-full h-64 object-cover rounded-lg"
+                          className="w-full h-48 md:h-64 object-cover rounded-lg"
                         />
                         <div className="absolute top-3 left-3 bg-primary/90 text-white px-3 py-1 rounded-full text-sm font-medium">
                           Depois
