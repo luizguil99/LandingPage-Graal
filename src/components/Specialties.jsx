@@ -427,6 +427,29 @@ const SpecialtyModal = ({ specialty, isOpen, onClose }) => {
 const SpecialtyCard = ({ specialty }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const handleSaibaMaisClick = () => {
+    if (isMobile) {
+      // Redirecionar para o WhatsApp diretamente em dispositivos móveis
+      const message = `Olá, desejo mais informações do procedimento ${specialty.title}`;
+      window.open(`https://contate.me/graalclinicav1?text=${encodeURIComponent(message)}`, '_blank');
+    } else {
+      // Abrir o modal apenas em desktop
+      setIsModalOpen(true);
+    }
+  };
 
   return (
     <>
@@ -468,17 +491,19 @@ const SpecialtyCard = ({ specialty }) => {
               p-0 ${specialty.color} hover:bg-transparent hover:opacity-80
               transition-opacity duration-300 rounded-full
             `}
-            onClick={() => setIsModalOpen(true)}
+            onClick={handleSaibaMaisClick}
           >
             Saiba mais <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </CardFooter>
       </Card>
-      <SpecialtyModal 
-        specialty={specialty} 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
-      />
+      {!isMobile && (
+        <SpecialtyModal 
+          specialty={specialty} 
+          isOpen={isModalOpen} 
+          onClose={() => setIsModalOpen(false)} 
+        />
+      )}
     </>
   );
 };

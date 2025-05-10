@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { Button } from '../components/ui/button'
-import { CalendarDays, ChevronRight, Star, ChevronLeft } from 'lucide-react'
+import { CalendarDays, ChevronRight, Star, ChevronLeft, Smile } from 'lucide-react'
 
 const Hero = () => {
   const [activeTestimonial, setActiveTestimonial] = useState(0)
-  
+
   const testimonials = [
     {
       id: 1,
@@ -47,25 +47,25 @@ const Hero = () => {
               <span className="flex h-2 w-2 rounded-full bg-primary"></span>
               <span className="font-medium text-sm">Odontologia de excelência</span>
             </div>
-            
+
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-gray-900">
               Transforme seu <span className="text-primary">sorriso</span> na Graal Clínica
             </h1>
-            
+
             <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              Combinamos tecnologia avançada e profissionais especializados para oferecer 
+              Combinamos tecnologia avançada e profissionais especializados para oferecer
               tratamentos personalizados que transformam vidas através de sorrisos saudáveis.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Button size="lg" className="bg-primary hover:bg-primary/90 font-medium flex items-center gap-2" onClick={() => window.open('https://contate.me/graalclinicav1', '_blank')}>
                 <CalendarDays className="h-5 w-5" />
                 Agendar Consulta
               </Button>
-              
-              <Button 
-                size="lg" 
-                variant="outline" 
+
+              <Button
+                size="lg"
+                variant="outline"
                 className="border-primary text-primary hover:bg-primary/10 font-medium flex items-center gap-2"
                 onClick={() => {
                   document.getElementById('specialties').scrollIntoView({ behavior: 'smooth' });
@@ -92,24 +92,24 @@ const Hero = () => {
               </div>
             </div>
           </div>
-          
+
           {/* Right Column - Testimonials */}
           <div className="relative">
             {/* Decorative elements */}
             <div className="absolute -top-10 -left-10 w-32 h-32 bg-blue-200 rounded-full opacity-30"></div>
             <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-primary/20 rounded-full"></div>
-            
+
             <div className="bg-white p-8 rounded-2xl shadow-xl relative z-10">
               <div className="flex justify-between items-center mb-6">
                 <h3 className="text-xl font-bold text-gray-900">O que nossos pacientes dizem</h3>
                 <div className="flex gap-2">
-                  <button 
+                  <button
                     onClick={prevTestimonial}
                     className="h-8 w-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors"
                   >
                     <ChevronLeft className="h-4 w-4" />
                   </button>
-                  <button 
+                  <button
                     onClick={nextTestimonial}
                     className="h-8 w-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors"
                   >
@@ -117,10 +117,10 @@ const Hero = () => {
                   </button>
                 </div>
               </div>
-              
+
               <div className="relative h-[220px] md:h-[280px]">
                 {testimonials.map((testimonial, index) => (
-                  <div 
+                  <div
                     key={testimonial.id}
                     className={`absolute top-0 left-0 w-full transition-opacity duration-300 ${
                       index === activeTestimonial ? 'opacity-100 z-10' : 'opacity-0 z-0'
@@ -137,10 +137,10 @@ const Hero = () => {
                           "{testimonial.quote}"
                         </blockquote>
                       </div>
-                      
+
                       <div className="flex items-center gap-4">
-                        <img 
-                          src={testimonial.image} 
+                        <img
+                          src={testimonial.image}
                           alt={testimonial.name}
                           className="h-12 w-12 rounded-full object-cover"
                         />
@@ -153,19 +153,14 @@ const Hero = () => {
                   </div>
                 ))}
               </div>
-              
+
               <div className="mt-6 pt-6 border-t border-gray-100">
                 <div className="flex items-center gap-4">
                   <div className="h-14 w-14 rounded-full bg-primary/10 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M12 5.5c-1.5-1-2.5-2-2.5-3.5.5 0 2.5-.5 2.5-2 0 1.5 2 2 2.5 2 0 1.5-1 2.5-2.5 3.5z"/>
-                      <path d="M12 7v1"/>
-                      <path d="M12 18v3"/>
-                      <path d="M10 10.5V15c0 .66-.1 1-1 1-2 0-3 1.34-3 3h12c0-1.66-1-3-3-3-.9 0-1-.34-1-1v-4.5"/>
-                    </svg>
+                    <Smile className="h-7 w-7 text-primary" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900">Primeira Consulta Gratuita</h3>
+                    <h3 className="font-bold text-gray-900">Seu sorriso perfeito começa aqui</h3>
                     <p className="text-sm text-gray-500">Agende agora e receba uma avaliação completa</p>
                   </div>
                 </div>
