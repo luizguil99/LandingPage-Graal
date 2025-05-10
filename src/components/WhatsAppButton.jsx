@@ -2,6 +2,15 @@ import React from 'react';
 
 const WhatsAppButton = ({ phoneNumber = "5511999999999", message = "Olá! Gostaria de agendar uma consulta." }) => {
   const handleClick = () => {
+    // Evento de conversão do Google Ads
+    if (window.gtag) {
+      window.gtag('event', 'conversion', {
+        'send_to': 'AW-17045357431/CkmOCNWuz8UaEPeG7r8_',
+        'value': 1.0,
+        'currency': 'BRL'
+      });
+    }
+    
     window.open('https://contate.me/graalclinicav1', '_blank');
   };
 

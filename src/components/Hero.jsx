@@ -37,6 +37,19 @@ const Hero = () => {
     setActiveTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)
   }
 
+  const handleAgendarConsulta = () => {
+    // Evento de conversão do Google Ads
+    if (window.gtag) {
+      window.gtag('event', 'conversion', {
+        'send_to': 'AW-17045357431/CkmOCNWuz8UaEPeG7r8_',
+        'value': 1.0,
+        'currency': 'BRL'
+      });
+    }
+    
+    window.open('https://contate.me/graalclinicav1', '_blank');
+  }
+
   return (
     <section id="inicio" className="relative bg-gradient-to-b from-blue-50 to-white py-16 md:py-24 overflow-hidden">
       <div className="container mx-auto px-4">
@@ -58,7 +71,7 @@ const Hero = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 font-medium flex items-center gap-2" onClick={() => window.open('https://contate.me/graalclinicav1', '_blank')}>
+              <Button size="lg" className="bg-primary hover:bg-primary/90 font-medium flex items-center gap-2" onClick={handleAgendarConsulta}>
                 <CalendarDays className="h-5 w-5" />
                 Agendar Consulta
               </Button>

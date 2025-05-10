@@ -441,6 +441,15 @@ const SpecialtyCard = ({ specialty }) => {
   }, []);
 
   const handleSaibaMaisClick = () => {
+    // Evento de conversão do Google Ads
+    if (window.gtag) {
+      window.gtag('event', 'conversion', {
+        'send_to': 'AW-17045357431/CkmOCNWuz8UaEPeG7r8_',
+        'value': 1.0,
+        'currency': 'BRL'
+      });
+    }
+
     if (isMobile) {
       // Redirecionar para o WhatsApp diretamente em dispositivos móveis
       const message = `Olá, desejo mais informações do procedimento ${specialty.title}`;
