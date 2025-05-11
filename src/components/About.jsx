@@ -1,6 +1,14 @@
 import { Button } from '../components/ui/button'
 
 const About = () => {
+  // Array com URLs de fotos profissionais do Unsplash
+  const teamAvatars = [
+    "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=300&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1622902046580-2b47f47f5471?q=80&w=300&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=300&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=300&auto=format&fit=crop"
+  ];
+
   return (
     <section id="about" className="py-20">
       <div className="container mx-auto px-4">
@@ -46,10 +54,13 @@ const About = () => {
               <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg hidden md:block">
                 <div className="flex items-center gap-2">
                   <div className="flex -space-x-2">
-                    {[1, 2, 3, 4].map((i) => (
-                      <div key={i} className="w-8 h-8 rounded-full bg-primary/20 border-2 border-white flex items-center justify-center text-xs font-bold text-primary">
-                        {i}
-                      </div>
+                    {teamAvatars.map((avatar, i) => (
+                      <img 
+                        key={i} 
+                        src={avatar} 
+                        alt={`Profissional ${i+1}`} 
+                        className="w-10 h-10 rounded-full border-2 border-white object-cover"
+                      />
                     ))}
                   </div>
                   <div>
