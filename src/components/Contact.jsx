@@ -5,6 +5,21 @@ import { Card, CardContent } from '../components/ui/card'
 import { MapPin, Phone, Mail, Clock } from 'lucide-react'
 
 const Contact = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Evento de conversão do Google Ads
+    if (window.gtag) {
+      window.gtag('event', 'conversion', {
+        'send_to': 'AW-17045357431/CkmOCNWuz8UaEPeG7r8_',
+        'value': 1.0,
+        'currency': 'BRL'
+      });
+    }
+    
+    // Aqui você implementaria a lógica para enviar o formulário
+    alert('Mensagem enviada com sucesso!');
+  };
+
   return (
     <section id="contact" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -17,7 +32,7 @@ const Contact = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-medium">Nome completo</label>
@@ -60,8 +75,8 @@ const Contact = () => {
                   <MapPin className="h-10 w-10 text-primary mb-4" />
                   <h3 className="font-bold text-lg mb-2">Endereço</h3>
                   <p className="text-muted-foreground">
-                    Av. Paulista, 1000<br />
-                    São Paulo, SP
+                    Rua Inácio Xavier de Carvalho, 988<br />
+                    São Francisco, São Luís-Maranhão
                   </p>
                 </CardContent>
               </Card>
@@ -71,8 +86,7 @@ const Contact = () => {
                   <Phone className="h-10 w-10 text-primary mb-4" />
                   <h3 className="font-bold text-lg mb-2">Telefone</h3>
                   <p className="text-muted-foreground">
-                    (11) 3000-0000<br />
-                    (11) 99000-0000
+                    (98) 984074070
                   </p>
                 </CardContent>
               </Card>
@@ -93,8 +107,8 @@ const Contact = () => {
                   <Clock className="h-10 w-10 text-primary mb-4" />
                   <h3 className="font-bold text-lg mb-2">Horário</h3>
                   <p className="text-muted-foreground">
-                    Segunda - Sexta: 8h às 19h<br />
-                    Sábado: 8h às 13h
+                    Seg-Sex: 8h-19h<br />
+                    Sáb: 8h-14h
                   </p>
                 </CardContent>
               </Card>
@@ -102,7 +116,7 @@ const Contact = () => {
             
             <div className="h-64 bg-gray-200 rounded-lg overflow-hidden">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0976951333286!2d-46.65390548502211!3d-23.564611184683726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1652276513579!5m2!1spt-BR!2sbr" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.1097889947204!2d-44.301029239943894!3d-2.530520138158983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7f68ed9eee261d9%3A0xb01bfe6fd41eeebc!2sR.%20In%C3%A1cio%20Xavier%20de%20Carvalho%2C%20988%20-%20S%C3%A3o%20Francisco%2C%20S%C3%A3o%20Lu%C3%ADs%20-%20MA!5e0!3m2!1spt-BR!2sbr!4v1650298765625!5m2!1spt-BR!2sbr" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 

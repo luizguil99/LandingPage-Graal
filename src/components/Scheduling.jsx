@@ -35,7 +35,7 @@ const Scheduling = () => {
         
         <div className="mt-10 text-center">
           <p className="text-muted-foreground">
-            Prefere agendar por telefone? Ligue para <span className="font-medium">(11) 3000-0000</span>
+            Prefere agendar por telefone? Ligue para <span className="font-medium">(98) 98407-4070</span>
           </p>
         </div>
       </div>
