@@ -1,18 +1,13 @@
-import { useEffect } from 'react'
+import Cal, { getCalApi } from "@calcom/embed-react";
+import { useEffect } from "react";
 
 const Scheduling = () => {
   useEffect(() => {
-    // Carrega o script do Calendly dinamicamente
-    const script = document.createElement('script')
-    script.src = 'https://assets.calendly.com/assets/external/widget.js'
-    script.async = true
-    document.body.appendChild(script)
-
-    return () => {
-      // Remove o script quando o componente for desmontado
-      document.body.removeChild(script)
-    }
-  }, [])
+    (async function () {
+      const cal = await getCalApi({"namespace":"avaliacao-dra-amanda"});
+      cal("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+    })();
+  }, []);
 
   return (
     <section id="agendamento" className="py-20 bg-gray-50">
@@ -25,12 +20,15 @@ const Scheduling = () => {
         </div>
         
         <div className="max-w-6xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
-          {/* Widget do Calendly */}
-          <div 
-            className="calendly-inline-widget" 
-            data-url="https://calendly.com/graal/agendamento-de-consulta" 
-            style={{ minWidth: '100%', height: '800px' }}
-          ></div>
+          {/* Widget do Cal.com */}
+          <div style={{ height: '800px' }}>
+            <Cal 
+              namespace="avaliacao-dra-amanda"
+              calLink="graal-adm/avaliacao-dra-amanda"
+              style={{width:"100%",height:"100%",overflow:"scroll"}}
+              config={{"layout":"month_view"}}
+            />
+          </div>
         </div>
         
         <div className="mt-10 text-center">
@@ -40,7 +38,7 @@ const Scheduling = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Scheduling
+export default Scheduling;
