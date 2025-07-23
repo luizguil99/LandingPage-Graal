@@ -37,7 +37,7 @@ const Header = () => {
             <div className="flex items-center gap-6">
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4" aria-hidden="true" />
-                <a href="tel:+5598984074070" className="text-sm hover:underline" aria-label="Telefone da clínica">(98) 98407-4070</a>
+                <a href="tel:+5598983078511" className="text-sm hover:underline" aria-label="Telefone da clínica">(98) 98307-8511</a>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="h-4 w-4" aria-hidden="true" />
@@ -130,7 +130,7 @@ const Header = () => {
                     <Phone className="h-5 w-5 text-primary" aria-hidden="true" />
                     <div>
                       <p className="text-sm font-medium text-gray-900">Telefone</p>
-                      <a href="tel:+5598984074070" className="text-sm text-gray-500 hover:underline" aria-label="Ligar para clínica">(98) 98407-4070</a>
+                      <a href="tel:+5598983078511" className="text-sm text-gray-500 hover:underline" aria-label="Ligar para clínica">(98) 98307-8511</a>
                     </div>
                   </div>
 
