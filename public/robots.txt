@@ -1,0 +1,30 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.graalodonto.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Allow all important pages
+Allow: /#inicio
+Allow: /#especialidades
+Allow: /#sobre
+Allow: /#depoimentos
+Allow: /#agendamento
+Allow: /#contato
+
+# Disallow admin or private areas (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+
+# Allow images and assets
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.css
+Allow: /*.js 

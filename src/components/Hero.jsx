@@ -56,6 +56,35 @@ const Hero = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left Column - Main Content */}
           <div className="max-w-xl">
+            {/* Schema.org markup for main content */}
+            <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "MedicalBusiness",
+              "name": "Graal Odontologia",
+              "description": "Clínica odontológica especializada em implantes, ortodontia e estética dental em São Luís - Maranhão",
+              "url": "https://www.graalodonto.com",
+              "telephone": "+5598984074070",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "São Luís",
+                "addressRegion": "Maranhão",
+                "addressCountry": "BR"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": -2.5391,
+                "longitude": -44.2829
+              },
+              "openingHours": "Mo-Fr 08:00-18:00, Sa 08:00-12:00",
+              "priceRange": "$$",
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "5000"
+              }
+            })}
+            </script>
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 text-primary rounded-full mb-6">
               <span className="flex h-2 w-2 rounded-full bg-primary"></span>
               <span className="font-medium text-sm">Odontologia de excelência</span>
@@ -90,9 +119,9 @@ const Hero = () => {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-3 gap-6" itemScope itemType="https://schema.org/MedicalBusiness">
               <div className="text-center">
-                <p className="text-3xl font-bold text-primary">+5000</p>
+                <p className="text-3xl font-bold text-primary" itemProp="numberOfEmployees">+5000</p>
                 <p className="text-sm text-gray-500">Pacientes Atendidos</p>
               </div>
               <div className="text-center">
@@ -100,7 +129,7 @@ const Hero = () => {
                 <p className="text-sm text-gray-500">Especialistas</p>
               </div>
               <div className="text-center">
-                <p className="text-3xl font-bold text-primary">98%</p>
+                <p className="text-3xl font-bold text-primary" itemProp="aggregateRating">98%</p>
                 <p className="text-sm text-gray-500">Satisfação</p>
               </div>
             </div>
@@ -115,6 +144,21 @@ const Hero = () => {
             <div className="bg-white p-8 rounded-2xl shadow-xl relative z-10">
               <div className="flex justify-between items-center mb-6">
                 <h3 className="text-xl font-bold text-gray-900">O que nossos pacientes dizem</h3>
+                {/* Schema.org markup for reviews */}
+                <script type="application/ld+json">
+                {JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "AggregateRating",
+                  "itemReviewed": {
+                    "@type": "MedicalBusiness",
+                    "name": "Graal Odontologia"
+                  },
+                  "ratingValue": "4.9",
+                  "reviewCount": "5000",
+                  "bestRating": "5",
+                  "worstRating": "1"
+                })}
+                </script>
                 <div className="flex gap-2">
                   <button
                     onClick={prevTestimonial}

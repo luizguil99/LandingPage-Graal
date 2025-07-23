@@ -5,7 +5,12 @@ const Scheduling = () => {
   useEffect(() => {
     (async function () {
       const cal = await getCalApi({"namespace":"avaliacao-dra-amanda"});
-      cal("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+      cal("ui", {
+        "hideEventTypeDetails": false,
+        "layout": "month_view",
+        "language": "pt-BR",
+        "timezone": "America/Sao_Paulo"
+      });
     })();
   }, []);
 
@@ -26,7 +31,11 @@ const Scheduling = () => {
               namespace="avaliacao-dra-amanda"
               calLink="graal-adm/avaliacao-dra-amanda"
               style={{width:"100%",height:"100%",overflow:"scroll"}}
-              config={{"layout":"month_view"}}
+              config={{
+                "layout": "month_view",
+                "language": "pt-BR",
+                "timezone": "America/Sao_Paulo"
+              }}
             />
           </div>
         </div>
