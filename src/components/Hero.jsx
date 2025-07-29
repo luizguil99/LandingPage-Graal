@@ -41,7 +41,7 @@ const Hero = () => {
     // Evento de conversão do Google Ads
     if (window.gtag) {
       window.gtag('event', 'conversion', {
-        'send_to': 'AW-17045357431/CkmOCNWuz8UaEPeG7r8_',
+        'send_to': 'AW-17413364544/CkmOCNWuz8UaEPeG7r8_',
         'value': 1.0,
         'currency': 'BRL'
       });
