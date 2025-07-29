@@ -17,7 +17,7 @@ const WhatsAppButton = ({ phoneNumber = "5511999999999", message = "Olá! Gostar
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2 group">
       <span className="bg-white text-indigo-600 text-sm font-medium py-1 px-3 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        Fale conosco:  (98) 983078511
+        Fale conosco:  (98) 98211-8879
       </span>
       <button
         onClick={handleClick}

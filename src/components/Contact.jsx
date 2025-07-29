@@ -86,7 +86,7 @@ const Contact = () => {
                   <Phone className="h-10 w-10 text-primary mb-4" />
                   <h3 className="font-bold text-lg mb-2">Telefone</h3>
                   <p className="text-muted-foreground">
-                    (98) 983078511
+                  (98) 98211-8879
                   </p>
                 </CardContent>
               </Card>
