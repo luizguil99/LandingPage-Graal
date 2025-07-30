@@ -441,21 +441,21 @@ const SpecialtyCard = ({ specialty }) => {
   }, []);
 
   const handleSaibaMaisClick = () => {
-    // Evento de conversão do Google Ads
-    if (window.gtag) {
-      window.gtag('event', 'conversion', {
-        'send_to': 'AW-17413364544/CkmOCNWuz8UaEPeG7r8_',
-        'value': 1.0,
-        'currency': 'BRL'
-      });
-    }
-
     if (isMobile) {
+      // Evento de conversão do Google Ads apenas quando redirecionar para WhatsApp
+      if (window.gtag) {
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-17413364544/CkmOCNWuz8UaEPeG7r8_',
+          'value': 1.0,
+          'currency': 'BRL'
+        });
+      }
+      
       // Redirecionar para o WhatsApp diretamente em dispositivos móveis
       const message = `Olá, desejo mais informações do procedimento ${specialty.title}`;
       window.open(`https://contate.me/graalclinicav1?text=${encodeURIComponent(message)}`, '_blank');
     } else {
-      // Abrir o modal apenas em desktop
+      // Abrir o modal apenas em desktop (SEM marcar conversão)
       setIsModalOpen(true);
     }
   };
