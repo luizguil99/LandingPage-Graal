@@ -299,6 +299,15 @@ const SpecialtyModal = ({ specialty, isOpen, onClose }) => {
   const WhatsAppButton = () => (
     <Button 
       onClick={() => {
+        // Evento de conversão do Google Ads
+        if (window.gtag) {
+          window.gtag('event', 'conversion', {
+            'send_to': 'AW-17413364544/CkmOCNWuz8UaEPeG7r8_',
+            'value': 1.0,
+            'currency': 'BRL'
+          });
+        }
+        
         const message = `Olá, desejo mais informações do procedimento ${specialty.title}`;
         window.open(`https://contate.me/graalclinicav1?text=${encodeURIComponent(message)}`, '_blank');
       }}
