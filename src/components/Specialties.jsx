@@ -302,7 +302,7 @@ const SpecialtyModal = ({ specialty, isOpen, onClose }) => {
         // Evento de conversão do Google Ads
         if (window.gtag) {
           window.gtag('event', 'conversion', {
-            'send_to': 'AW-17413364544/CkmOCNWuz8UaEPeG7r8_',
+            'send_to': 'AW-17413364544/6dDgCKWls_saEMC2q-9A',
             'value': 1.0,
             'currency': 'BRL'
           });
@@ -454,7 +454,7 @@ const SpecialtyCard = ({ specialty }) => {
       // Evento de conversão do Google Ads apenas quando redirecionar para WhatsApp
       if (window.gtag) {
         window.gtag('event', 'conversion', {
-          'send_to': 'AW-17413364544/CkmOCNWuz8UaEPeG7r8_',
+          'send_to': 'AW-17413364544/6dDgCKWls_saEMC2q-9A',
           'value': 1.0,
           'currency': 'BRL'
         });
